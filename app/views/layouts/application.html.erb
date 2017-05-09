@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OnlineBlogs</title>
+    <title>小赓赓 's world</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= yield :stylesheets %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/menu' %>
+    <div class="container">
+      <% unless flash[:notice].blank? %>
+        <div class="alert alert-info"><%= flash[:notice] %></div>
+      <% end -%>
+      
+      <%= yield %>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= yield :javascripts %>
   </body>
 </html>
