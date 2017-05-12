@@ -1,0 +1,22 @@
+<div class="row">
+  <% @blogs.each do |blog| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= link_to image_tag(blog.blog_images.first.image.url(:middle), alt: blog.title), blog_path(blog) %>
+        <div class="caption">
+          <h4><%= link_to blog.title, blog_path(blog), class: 'title' %></h4>
+            <ul class="list-unstyled">
+              <li>
+                <% blog.tags.each do |tag| %>
+                  <span class="badge"><%= tag.title %></span>
+                <% end -%>
+              </li>
+            </ul>
+          
+        </div>
+      </div>
+    </div>
+  <% end -%>
+</div>
+
+<%= will_paginate @blogs %>

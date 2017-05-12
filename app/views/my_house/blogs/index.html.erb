@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>标题</th>
+        <th>是否公开</th>
+        <th>封面图片</th>
+        <th></th>
+      </tr>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.id %></td>
+          <td>
+            <%= link_to blog.title, my_house_blog_path(blog) %> 
+            <% blog.tags.each do |tag| %>
+              <span class="badge"><%= tag.title %></span>
+            <% end -%>
+          </td>
+          <td>
+            <%= blog.is_public ? "是" : "否" %>
+          </td>
+
+          <td>
+            <%= link_to "上传封面图片", my_house_blog_blog_images_path(blog) %>
+          </td>
+          <td>
+            <%= link_to "编辑", edit_my_house_blog_path(blog) %>
+            <%= link_to "删除", my_house_blog_path(blog), method: 'delete' %>
+          </td>
+        </tr>
+      <% end -%>
+    </table>
+
+    <%= will_paginate @blogs %>
+
+    
+  </div>
+</div>

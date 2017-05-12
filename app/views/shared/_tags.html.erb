@@ -1,0 +1,7 @@
+<h3>关键词</h3>
+  
+  <% @tags.each do |tag| %>
+
+    <h5><span class="label label-info"><%= link_to tag.title, search_blog_path(tag_id: tag.id) %></span></h5>
+
+  <% end -%>
