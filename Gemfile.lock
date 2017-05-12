@@ -100,6 +100,8 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
     puma (3.8.2)
+    pygments.rb (1.1.2)
+      multi_json (>= 1.0.0)
     rack (2.0.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -130,6 +132,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redcarpet (3.4.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -184,7 +187,9 @@ DEPENDENCIES
   mysql2
   paperclip (~> 5.0.0)
   puma (~> 3.0)
+  pygments.rb
   rails (~> 5.0.1)
+  redcarpet
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

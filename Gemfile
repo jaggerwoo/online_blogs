@@ -39,6 +39,8 @@ gem 'font-awesome-rails'
 gem 'annotate_models'
 gem 'will_paginate'
 gem "paperclip", "~> 5.0.0"
+gem 'redcarpet'
+gem 'pygments.rb'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
