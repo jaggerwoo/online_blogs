@@ -21,7 +21,13 @@ class MyHouse::BlogImagesController < MyHouse::BaseController
   end
 
   def destroy
-
+    @blog_image = @blog.blog_images.find params[:id]
+    if @blog_image.destroy
+      flash[:notice] = "删除成功!"
+    else
+      flash[:notice] = "删除失败!"
+    end
+    redirect_to :back
   end
 
   private

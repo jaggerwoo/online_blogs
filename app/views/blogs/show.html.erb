@@ -26,3 +26,42 @@
 <div>
   <%= markdown @blog.content %>
 </div>
+<br />
+<br />
+<!--<ul class="nav nav-tabs">-->
+  <!--<li role="presentation" class="active"><a href="javascript:;">评论</a></li>-->
+<!--</ul>-->
+<!--<br />-->
+<!--<div>-->
+  <!--<div class="row">-->
+    <!--<% @comments.main_comment.each do |comment| %>-->
+      <!--<ul>-->
+        <!--<li><%= comment.content%></li>-->
+      <!--</ul>-->
+    <!--<% end -%>-->
+  <!--</div>-->
+
+  <!--<div class="row">-->
+    <!--<div class="col-sm-5">-->
+      <!--<%= form_for @comment, url: blog_comments_path(@blog.id), method: :post do |f| %>-->
+        <!--<div class="form-group">-->
+          <!--<ul class="list-unstyled">-->
+            <!--<% @comment.errors.messages.values.flatten.each do |error| %>-->
+              <!--<li><i class="fa fa-exclamation-circle"></i> <%= error %></li>-->
+            <!--<% end -%>-->
+          <!--</ul>-->
+        <!--</div>-->
+
+        <!--<div class="form-group">-->
+          <!--<%= f.text_area :content, class: "form-control", rows: '5', placeholder: "内容" %>-->
+        <!--</div>-->
+
+        <!--<div class="form-group">-->
+          <!--<%= f.text_field :user_name, class: "form-control", placeholder: "留下您的名字"  %>-->
+        <!--</div>-->
+
+        <!--<%= f.submit "发表评论", class: "btn btn-primary" %> -->
+      <!--<% end -%>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
