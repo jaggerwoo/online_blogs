@@ -9,7 +9,7 @@ set :repo_url, "git@github.com:WadeJG/online_blogs.git"
 set :branch, ENV['BRANCH'] || "master"
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, "/root/online_blogs"
+set :deploy_to, "/home/root/online_blogs"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
