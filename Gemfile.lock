@@ -217,6 +217,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capistrano (~> 3.7)
+  capistrano-bundler
   capistrano-rails
   capistrano-rvm
   coffee-rails (~> 4.2)
