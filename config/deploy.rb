@@ -21,7 +21,6 @@ set :rails_env, ENV['RAILS_ENV'] || ENV['rails_env']
 # Default value for :pty is false
 # set :pty, true
 
-set :rvm_map_bins, %w{gem rake ruby rails bundle}
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
