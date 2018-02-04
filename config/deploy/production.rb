@@ -1,7 +1,7 @@
 set :branch, 'master'
 set :rails_env, 'production'
 
-server 'http://47.104.2.156', user: 'deploy', roles: %w{web db}
+server '47.104.2.156', user: 'root', roles: %w{web db}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
