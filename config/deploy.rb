@@ -21,6 +21,7 @@ set :rails_env, ENV['RAILS_ENV'] || ENV['rails_env']
 # Default value for :pty is false
 # set :pty, true
 
+set :rvm_binary, '~/.rvm/bin/rvm'
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
