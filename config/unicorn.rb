@@ -86,7 +86,7 @@
 rails_env = ENV["RAILS_ENV"] || "development"
 rails_root = File.expand_path(__FILE__).split('/')[0..-3].join('/')
 
-port_number = 8080
+port_number = 80
 process_number = rails_env == 'production' ? 2 : 1
 
 puts "unicorn env: #{rails_env}"
