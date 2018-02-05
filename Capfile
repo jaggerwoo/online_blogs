@@ -4,7 +4,6 @@ require "capistrano/setup"
 # Include default deployment tasks
 require 'capistrano/deploy'
 
-require "capistrano/rsync"
 require 'capistrano/rvm'
 require "rvm/capistrano"
 require 'capistrano/bundler'
