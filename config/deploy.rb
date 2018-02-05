@@ -15,7 +15,7 @@ set :deploy_to, "/home/root/online_blogs"
 
 set :rails_env, ENV['RAILS_ENV'] || ENV['rails_env']
 
-set :rvm_type, :user
+set :rvm_type, :system
 set :rvm_ruby_version, '2.4.1'
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
