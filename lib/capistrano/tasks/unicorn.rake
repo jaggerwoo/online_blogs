@@ -16,7 +16,9 @@ namespace :deploy do
     end
 
     def start_unicorn_cmd
-      execute "cd #{current_path}; bundle exec unicorn_rails -E #{fetch(:rails_env)} -c config/unicorn.rb -D"
+      within current_path do
+        execute :bundle, 'exec', "unicorn_rails -E #{fetch(:rails_env)} -c config/unicorn.rb -D"
+      end
     end
 
     def unicorn_container action_name
