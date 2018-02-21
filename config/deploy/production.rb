@@ -1,7 +1,7 @@
 set :branch, 'master'
 set :rails_env, 'production'
 
-server '47.104.2.156', user: 'root', roles: %w{web db}
+server '47.104.2.156', user: 'deploy', roles: %w{web db}
 
 set :rvm_type, :system
 set :rvm_ruby_version, '2.4.1'
