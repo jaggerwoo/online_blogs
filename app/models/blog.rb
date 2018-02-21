@@ -1,9 +1,7 @@
 class Blog < ApplicationRecord
   has_many :blogs_tags
   has_many :tags, through: :blogs_tags
-
   has_many :blog_images
-
   has_many :comments
 
   def tags_string= one_tags

@@ -1,5 +1,6 @@
 class MyHouse::BlogsController < MyHouse::BaseController
   before_action :find_blog_id, except: [:new, :create, :index]
+  
   def new
     @blog = Blog.new
   end
