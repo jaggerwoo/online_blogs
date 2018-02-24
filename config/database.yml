@@ -5,6 +5,7 @@ default: &default
   timeout: 5000
   username: root
   password: 
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -19,7 +20,6 @@ production:
   encoding: utf8
   database: online_blogs_development
   host: 127.0.0.1
-  socket: /var/run/mysqld/mysqld.sock
   username: root
   password: 
 
