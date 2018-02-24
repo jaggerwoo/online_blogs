@@ -19,7 +19,7 @@ production:
   pool: 25
   encoding: utf8
   database: online_blogs_development
-  host: 127.0.0.1
+  # host: 127.0.0.1
   username: root
   password: 
 
