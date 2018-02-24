@@ -18,7 +18,7 @@ production:
   pool: 25
   encoding: utf8
   database: online_blogs_development
-  # host: localhost
+  host: 127.0.0.1
   username: root
   password: 
 
