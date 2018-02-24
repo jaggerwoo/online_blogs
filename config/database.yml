@@ -5,7 +5,7 @@ default: &default
   timeout: 5000
   username: root
   password: 
-  socket: /var/run/mysqld/mysqld.sock
+  # socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
