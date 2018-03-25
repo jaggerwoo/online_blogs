@@ -3,8 +3,8 @@ default: &default
   encoding: utf8
   pool: 5
   timeout: 5000
-  username: root
-  password: 
+  username: deploy
+  password: deploy
   # socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -20,8 +20,8 @@ production:
   encoding: utf8
   database: online_blogs_development
   # host: 127.0.0.1
-  username: root
-  password: 
+  username: deploy
+  password: deploy
 
 test:
   <<: *default
