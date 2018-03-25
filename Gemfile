@@ -36,7 +36,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'annotate_models'
 gem 'will_paginate'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'unicorn'
