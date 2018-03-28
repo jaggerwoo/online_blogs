@@ -65,8 +65,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
   gem 'rvm-capistrano'
-  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
