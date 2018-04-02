@@ -1,11 +1,11 @@
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  timeout: 5000
-  username: deploy
-  password: deploy
-  socket: /var/run/mysqld/mysqld.sock
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   timeout: 5000
+#   username: deploy
+#   password: deploy
+#   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
