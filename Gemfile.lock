@@ -160,6 +160,8 @@ GEM
       ffi (>= 0.5.0, < 2)
     redcarpet (3.4.0)
     ref (2.0.0)
+    rvm-capistrano (1.5.0)
+      capistrano (>= 2.15.4)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -235,6 +237,7 @@ DEPENDENCIES
   pygments.rb
   rails (~> 5.0.1)
   redcarpet
+  rvm-capistrano
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

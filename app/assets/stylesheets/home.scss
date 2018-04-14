@@ -1,0 +1,9 @@
+.thumbnail {
+  height: 290px;
+  &.detail {
+    height: auto;
+  }
+  a.title {
+    color: #333;
+  }
+}
