@@ -1,5 +1,5 @@
 class BlogImage < ApplicationRecord
-  belongs_to :blog
+  belongs_to :blog, touch: true
 
   has_attached_file :image, styles: {
     small: '60^x60', 

@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-lg-3">
-    <%= render 'shared/tags' %>
+    <%= render 'shared/tags', collection: @tags, cached: true %>
   </div>
   <div class="col-lg-9">
-    <%= render 'shared/blogs'%>
+    <%= render 'shared/blogs', collection: @blogs, cached: true %>
   </div>
 </div>
