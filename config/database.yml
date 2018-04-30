@@ -21,8 +21,7 @@ production:
   encoding: utf8
   reconnect: false
   database: online_blogs_production
-  host: localhost
-  # host: 127.0.0.1
+  host: 127.0.0.1
   username: deploy
   password: deploy
 
