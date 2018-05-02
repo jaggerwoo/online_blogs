@@ -1,8 +1,8 @@
 <% cache @blog do %>
   <h1><%= @blog.title %></h1>
   <div class="row">
-    <% cache [:blog_images, @blog_images.max(&:updated_at)] do %>
-      <% @blog_images.each do |blog_image| %>
+    <% @blog_images.each do |blog_image| %>
+      <% cache blog_image do %>
         <div class="col-xs-6 col-md-3">
           <a href="#" class="thumbnail detail">
             <%= image_tag blog_image.image.url(:middle) %>
@@ -14,8 +14,8 @@
 
   <ul class="list-unstyled">
     <li>
-      <% cache [:blog_tags, @blog_tags.max(&:updated_at)] do %>
-        <% @blog_tags.each do |tag| %>
+      <% @blog_tags.each do |tag| %>
+        <% cache tag do %>
           <span class="badge"><%= tag.title %></span>
         <% end -%>
       <% end -%>
