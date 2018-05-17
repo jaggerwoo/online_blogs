@@ -9,15 +9,16 @@ set :repo_url, "git@github.com:WadeJG/online_blogs.git"
 set :branch, ENV['BRANCH'] || "master"
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, "/home/deploy/online_blogs"
+set :deploy_to, "/home/deploy/apps/online_blogs"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
 set :rails_env, ENV['RAILS_ENV'] || ENV['rails_env']
 
-set :rvm_type, :system
-set :rvm_ruby_version, '2.4.1'
+set :rvm_type, :user
+set :rvm_ruby_version, '2.3.0'
 set :conditionally_migrate, true
+# set :rvm_map_bins, %w{gem rake ruby rails bundle}
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto

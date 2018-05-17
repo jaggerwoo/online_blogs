@@ -3,8 +3,8 @@ set :rails_env, 'production'
 
 server '140.82.26.63', user: 'deploy', roles: %w{web db}
 
-set :rvm_type, :system
-set :rvm_ruby_version, '2.4.1'
+set :rvm_type, :user
+set :rvm_ruby_version, '2.3.0'
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
