@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 一个简单的个人博客的Rails项目 8-)：
++ 简单搜索查询
++ 上传图片功能
++ 支持Markdown
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 项目地址
+[link text](https://genggeng.fun)
