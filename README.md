@@ -6,4 +6,4 @@
 + 支持Markdown
 
 ### 项目地址
-[link text](https://genggeng.fun)
+https://genggeng.fun
