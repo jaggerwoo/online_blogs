@@ -40,7 +40,9 @@ class MyHouse::BlogsController < MyHouse::BaseController
   end
 
   def destroy
-
+    @blog.destroy
+    flash[:notice] = "删除成功!"
+    redirect_to my_house_root_path
   end
 
   private

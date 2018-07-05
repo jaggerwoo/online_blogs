@@ -1,4 +1,6 @@
 class Blog < ApplicationRecord
+  searchkick word_start: [:title, :content], language: "chinese", callbacks: :async
+
   has_many :blogs_tags
   has_many :tags, through: :blogs_tags
   has_many :blog_images
@@ -13,5 +15,12 @@ class Blog < ApplicationRecord
 
       self.tags << one_tag
     end
+  end
+
+  def search_data
+    {
+      title: title,
+      content: content
+    }
   end
 end
