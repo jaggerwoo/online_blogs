@@ -1,4 +1,5 @@
 class MyHouse::BaseController < ActionController::Base
+  protect_from_forgery with: :exception
   layout 'my_house/layouts/my_house'
 
   include Signable::UserSession
