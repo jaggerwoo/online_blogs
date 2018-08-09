@@ -125,6 +125,8 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pundit (2.0.0)
+      activesupport (>= 3.0.0)
     pygments.rb (1.2.1)
       multi_json (>= 1.0.0)
     rack (2.0.4)
@@ -234,6 +236,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2 (~> 0.3.0)
   paperclip
+  pundit
   pygments.rb
   rails (~> 5.0.1)
   redcarpet

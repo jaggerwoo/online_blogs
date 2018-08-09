@@ -1,0 +1,31 @@
+<h1>用户登录</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+    <%= form_tag my_house_sessions_path, method: "post", remote: true, class: "signin_form" do %>
+      <div class="form-group">
+        <%= text_field_tag :username, nil, class: "form-control",placeholder: "用户名..." %>
+        <!-- <input type="text" name="username" placeholder="用户名..." class="form-control" id="form_username" title="用户名6-12个字符"></input> -->
+      </div>
+      <div class="form-group">
+        <%= password_field_tag :password, nil, class: "form-control",placeholder: "密码..."%>
+        <!-- <input type="password" name="password" placeholder="密码..." class="form-control" id="form_password"></input> -->
+      </div>
+      <%= submit_tag "登录", class: "btn btn-primary"%>
+      <!-- <input type="submit" class="btn btn-primary" value="登录"></input> -->
+    <% end -%>
+  </div>
+  <div class="sol-sm-8"></div>
+</div>
+
+<%= content_for :javascripts do %>
+  <script type="text/javascript">
+    $('.signin_form').on('ajax:success', function(event, data) {
+      if (data.status == 'ok') {
+        window.location.href = data.msg.redirect_url;
+      }else{
+        alert(data.msg);
+      }
+    })
+  </script>
+<% end -%>

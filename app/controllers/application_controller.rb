@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include Signable::UserSession
+
   helper_method [:markdown]
 
   # Highlight code with Pygments
@@ -14,7 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
   # Markdown with Redcarpet
   def markdown(text)
     renderer = HTMLwithPygments.new({
