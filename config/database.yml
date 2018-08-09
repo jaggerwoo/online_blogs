@@ -3,8 +3,8 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  username: root
-  password: nandudu
+  username: deploy
+  password: deploy
   host: localhost
   # socket: /var/run/mysqld/mysqld.sock
 
@@ -23,8 +23,8 @@ production:
   database: online_blogs_production
   host: localhost
   # host: 127.0.0.1
-  username: root
-  password: nandudu
+  username: deploy
+  password: deploy
 
 test:
   <<: *default
