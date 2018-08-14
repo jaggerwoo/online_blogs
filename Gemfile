@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-gem 'annotate_models'
 gem 'will_paginate'
 gem "paperclip"
 gem 'redcarpet'
@@ -42,6 +41,8 @@ gem 'pygments.rb'
 gem 'unicorn'
 
 gem "pundit"
+gem 'carrierwave', '~> 1.0'
+gem 'enumerize'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

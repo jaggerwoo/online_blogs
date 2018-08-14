@@ -12,14 +12,6 @@ class MyHouse::BlogImagesController < MyHouse::BaseController
     redirect_to :back
   end
 
-  def edit
-
-  end
-
-  def update
-
-  end
-
   def destroy
     @blog_image = @blog.blog_images.find params[:id]
     if @blog_image.destroy

@@ -1,0 +1,33 @@
+<div>
+  <div class="pull-right">
+    <%= form_tag my_house_blog_files_path(blog_id: @blog), method: :post, enctype: "multipart/form-data", class: "form-horizontal" do %>
+      <input type="file" name="files[]" multiple class="file-input" />
+      <%= submit_tag "上传", class: "btn btn-primary" %>
+    <% end -%>
+  </div>
+
+  <h1> 
+    Blog #<%= @blog.id %> <%= @blog.title %> 
+  </h1>
+</div>
+
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th></th>
+    </tr>
+
+    <% @blog_files.each do |blog_file| %>
+      <tr>
+        <td><%= blog_file.id %></td>
+
+ 
+        <td align="right">
+          <%= link_to "删除", my_house_blog_file_path(blog_file, blog_id: @blog.id), method: :delete, 'data-confirm': "确认删除吗?" %>
+        </td>
+      </tr>
+    <% end -%>
+  </table>
+
+</div>

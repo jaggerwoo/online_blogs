@@ -3,6 +3,7 @@ class Blog < ApplicationRecord
   has_many :tags, through: :blogs_tags
   has_many :blog_images
   has_many :comments
+  has_many :blog_files
 
   def tags_string= one_tags
     self.tags.destroy_all

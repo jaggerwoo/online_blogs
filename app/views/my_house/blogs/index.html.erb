@@ -6,6 +6,7 @@
         <th>标题</th>
         <th>是否公开</th>
         <th>封面图片</th>
+        <th>视频</th>
         <th></th>
       </tr>
       <% @blogs.each do |blog| %>
@@ -23,6 +24,9 @@
 
           <td>
             <%= link_to "上传封面图片", my_house_blog_blog_images_path(blog) %>
+          </td>
+          <td>
+            <%= link_to "上传视频", my_house_blog_files_path(blog_id: blog.id) %>
           </td>
           <td>
             <%= link_to "编辑", edit_my_house_blog_path(blog) %>

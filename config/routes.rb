@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       resources :blog_images, only: [:create, :destroy, :index]
     end
     resources :sessions, only: [:new, :create, :destroy]
+    resources :blog_files, only: [:create, :destroy, :index] do
+      get 'download_file', on: :member
+    end
   end
 
   resources :blogs, only: [:show] do 

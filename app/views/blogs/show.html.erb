@@ -27,13 +27,35 @@
   <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="javascript:;">具体内容</a></li>
   </ul>
+
   <br />
   <div>
     <%= markdown @blog.content %>
   </div>
+
   <br />
-  <br />
+  <% @blog.blog_files.each do |blog_file| %>
+    <div>
+      <video id="my-video" class="video-js" controls preload="auto" width="820" height="420" data-setup="{}">
+        <source src=<%= download_file_my_house_blog_file_path(blog_file)%> type='video/mp4'>
+
+        <p class="vjs-no-js">
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+      </video>
+    </div>
+  <% end -%>
+
+  <div>
+    
+  </div>
 <% end -%>
+
+<%= content_for :javascripts do %>
+  <script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
+<% end -%>
+
+
 <!--<ul class="nav nav-tabs">-->
   <!--<li role="presentation" class="active"><a href="javascript:;">评论</a></li>-->
 <!--</ul>-->
