@@ -1,9 +1,9 @@
 class Blog < ApplicationRecord
   has_many :blogs_tags
   has_many :tags, through: :blogs_tags
-  has_many :blog_images
+  has_many :blog_images, dependent: :destroy
   has_many :comments
-  has_many :blog_files
+  has_many :blog_files, dependent: :destroy
 
   def tags_string= one_tags
     self.tags.destroy_all

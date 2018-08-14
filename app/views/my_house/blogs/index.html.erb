@@ -30,7 +30,7 @@
           </td>
           <td>
             <%= link_to "编辑", edit_my_house_blog_path(blog) %>
-            <%= link_to "删除", my_house_blog_path(blog), method: 'delete' %>
+            <%= link_to "删除", my_house_blog_path(blog), method: :delete, data: {confirm: '确定删除吗?'} %>
           </td>
         </tr>
       <% end -%>
