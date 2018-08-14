@@ -1,5 +1,5 @@
 class MyHouse::BlogsController < MyHouse::BaseController
-  #skip_before_filter :verify_authenticity_token, :only => [:create]
+  skip_before_filter :verify_authenticity_token, :only => [:create, :update, :destroy]
   before_action :find_blog_id, except: [:new, :create, :index]
   
   def new
