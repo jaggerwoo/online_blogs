@@ -36,6 +36,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'will_paginate'
 gem "paperclip"
+gem 'mini_magick'
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'unicorn'
