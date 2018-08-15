@@ -1,5 +1,5 @@
 class MyHouse::BlogFilesController < MyHouse::BaseController
-  skip_before_filter :verify_authenticity_token, :only => [:create, :destroy]
+  skip_before_filter :verify_authenticity_token, :only => [:create, :destroy, :download_file]
   before_action :find_blog_id, except: [:download_file]
 
   def index
