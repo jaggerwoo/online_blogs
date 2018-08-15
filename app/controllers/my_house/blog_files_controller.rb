@@ -26,7 +26,6 @@ class MyHouse::BlogFilesController < MyHouse::BaseController
 
   def download_file
     @attachment = BlogFile.find(params[:id])
-
     send_file(@attachment.attachment_file.file.path, disposition: 'inline')
   end
 
