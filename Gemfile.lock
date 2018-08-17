@@ -131,6 +131,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    puma (3.8.2)
     pundit (2.0.0)
       activesupport (>= 3.0.0)
     pygments.rb (1.2.1)
@@ -244,6 +245,7 @@ DEPENDENCIES
   mini_magick
   mysql2 (~> 0.3.0)
   paperclip
+  puma
   pundit
   pygments.rb
   rails (~> 5.0.1)

@@ -39,7 +39,9 @@ gem "paperclip"
 gem 'mini_magick'
 gem 'redcarpet'
 gem 'pygments.rb'
+
 gem 'unicorn'
+gem 'puma'
 
 gem "pundit"
 gem 'carrierwave', '~> 1.0'
