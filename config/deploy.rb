@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.10.1"
+lock "~> 3.11.0"
 
 set :application, "online_blogs"
 set :repo_url, "git@github.com:WadeJG/online_blogs.git"
@@ -28,7 +28,7 @@ set :conditionally_migrate, true
 
 
 # Default value for :linked_files is []
-# append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_files, "/home/deploy/apps/online_blogs/config/database.yml", "/home/deploy/apps/online_blogs/config/secrets.yml"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sessions", "tmp/sockets", "public/system"
@@ -44,10 +44,22 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sessions", "tmp/socket
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+# unicorn cap
+# namespace :deploy do
+#   task :restart do
+#     invoke "deploy:unicorn_mine:reload"
+#   end
+# end
+
+# after 'deploy:publishing', 'deploy:restart'
+
+
+# puma cap
 namespace :deploy do
   task :restart do
-    invoke "deploy:unicorn_mine:reload"
+    invoke "deploy:puma_mine:reload"
   end
 end
 
-after 'deploy:publishing', 'deploy:restart'
+# after 'deploy:publishing', 'deploy:restart'
