@@ -245,7 +245,7 @@ DEPENDENCIES
   mini_magick
   mysql2 (~> 0.3.0)
   paperclip
-  puma
+  puma (~> 3.0)
   pundit
   pygments.rb
   rails (~> 5.0.1)

@@ -19,20 +19,29 @@ namespace :deploy do
       on roles(:web) do |host|
         puts "*" * 50
         puts "#{action_name} puma..."
-        unicorn_pid = capture("cat #{current_path}/tmp/pids/unicorn.pid")
-        case action_name
-        when :reload
-          puts "reload now..."
-          execute "pumactl restart"
-        when :start
-          if test("[ -f #{current_path}/tmp/pids/puma.pid ]")
+        if test("[ -f #{current_path}/tmp/pids/puma.pid ]")
+          puma_pid = capture("cat #{current_path}/tmp/pids/puma.pid")
+          case action_name
+          when :reload
+            puts "reload now..."
+            execute "cd #{current_path}; pumactl restart"
+          when :start
+            ;;
+          when :stop
+            puts "stop now..."
             execute "cd #{current_path}; kill #{puma_pid}"
           end
-          puts "start now..."
-          execute "puma -C config/puma.rb"
-        when :stop
-          puts "stop now..."
-          execute "cd #{current_path}; kill #{puma_pid}"
+        else
+          case action_name
+          when :reload
+            puts "reload now..."
+            execute "cd #{current_path}; bundle exec puma -C config/puma.rb -d"
+          when :start
+            puts "start now..."
+            execute "cd #{current_path}; bundle exec puma -C config/puma.rb -d"
+          when :stop
+            ;;
+          end
         end
       end
     end
