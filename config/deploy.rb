@@ -29,7 +29,7 @@ set :conditionally_migrate, true
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
-
+set :linked_files, %w{config/database.yml config/secrets.yml}
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sessions", "tmp/sockets", "public/system"
 
@@ -54,11 +54,11 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sessions", "tmp/socket
 
 # after 'deploy:publishing', 'deploy:restart'
 
-before "deploy:assets:precompile" do
-  run ["ln -nfs /home/deploy/apps/online_blogs/config/settings.yml #{current_path}/config/settings.yml",
-       "ln -nfs /home/deploy/apps/online_blogs/config/database.yml #{current_path}/config/database.yml"
-  ].join(" && ")
-end
+# before "deploy:updating", :ls do
+#   run ["ln -nfs /home/deploy/apps/online_blogs/config/secrets.yml #{current_path}/config/secrets.yml",
+#        "ln -nfs /home/deploy/apps/online_blogs/config/database.yml #{current_path}/config/database.yml"
+#   ].join(" && ")
+# end
 
 # puma cap
 namespace :deploy do
