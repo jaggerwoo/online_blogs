@@ -7,5 +7,5 @@ class BlogImage < ApplicationRecord
     big: "960x"
   }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-  validates_attachment_size :image, in: 0..5.megabytes
+  validates_attachment_size :image, in: 0..10.megabytes
 end
