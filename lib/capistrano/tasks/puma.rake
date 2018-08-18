@@ -15,6 +15,18 @@ namespace :deploy do
       puma_container :stop
     end
 
+    def start_puma_cmd
+      within current_path do
+        execute :bundle, 'exec', "puma -C config/puma.rb -d"
+      end
+    end
+
+    def restart_puma_cmd
+      within current_path do
+        execute :bundle, 'exec', "pumactl restart"
+      end
+    end
+
     def puma_container action_name
       on roles(:web) do |host|
         puts "*" * 50
@@ -24,7 +36,7 @@ namespace :deploy do
           case action_name
           when :reload
             puts "reload now..."
-            execute "cd #{current_path}; pumactl restart"
+            restart_puma_cmd
           when :start
             ;;
           when :stop
@@ -35,10 +47,10 @@ namespace :deploy do
           case action_name
           when :reload
             puts "reload now..."
-            execute "cd #{current_path}; bundle exec puma -C config/puma.rb -d"
+            start_puma_cmd
           when :start
             puts "start now..."
-            execute "cd #{current_path}; bundle exec puma -C config/puma.rb -d"
+            start_puma_cmd
           when :stop
             ;;
           end
