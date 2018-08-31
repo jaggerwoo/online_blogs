@@ -17,4 +17,7 @@ class WelcomeController < ApplicationController
     render action: :index
   end
 
+  def error_404
+    render_404
+  end
 end

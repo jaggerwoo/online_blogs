@@ -15,25 +15,39 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  protected
-  # Markdown with Redcarpet
-  def markdown(text)
-    renderer = HTMLwithPygments.new({
-      :filter_html => true,
-      :hard_wrap => true,
-      :link_attributes => {:rel => 'external nofollow'}
-    })
-
-    options = {
-      :autolink => true,
-      :no_intra_emphasis => true,
-      :fenced_code_blocks => true,
-      :lax_html_blocks => true,
-      :strikethrough => true,
-      :superscript => true,
-      :tables => true
-    }
-
-    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+  def render_404
+    render_optional_error_file(404)
   end
+
+  def render_optional_error_file(status_code)
+    status = status_code.to_s
+    fname = %w[404 403 422 500].include?(status) ? status : "unknown"
+
+    respond_to do |format|
+      format.html { render template: "/errors/#{fname}", handler: [:erb], status: status, layout: "application" }
+      format.all  { render nothing: true, status: status }
+    end
+  end
+
+  protected
+    # Markdown with Redcarpet
+    def markdown(text)
+      renderer = HTMLwithPygments.new({
+        :filter_html => true,
+        :hard_wrap => true,
+        :link_attributes => {:rel => 'external nofollow'}
+      })
+
+      options = {
+        :autolink => true,
+        :no_intra_emphasis => true,
+        :fenced_code_blocks => true,
+        :lax_html_blocks => true,
+        :strikethrough => true,
+        :superscript => true,
+        :tables => true
+      }
+
+      Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+    end
 end

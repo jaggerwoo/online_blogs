@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :blogs, only: [:show] do 
     resources :comments, only: [:index, :create, :destroy]
   end
+
+  match "*path", to: "welcome#error_404", via: :all
 end
