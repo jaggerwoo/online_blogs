@@ -47,7 +47,8 @@ class MyHouse::BlogsController < MyHouse::BaseController
   end
 
   private
-  def find_blog_id
-    @blog = Blog.find params[:id]
-  end
+
+    def find_blog_id
+      @blog = Blog.find params[:id]
+    end
 end

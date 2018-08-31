@@ -47,25 +47,25 @@ class AttachmentFileUploader < CarrierWave::Uploader::Base
 
   private
 
-  def gen_and_save_file_slug
-    model.slug = SecureRandom.uuid.delete('-')
-  end
+    def gen_and_save_file_slug
+      model.slug = SecureRandom.uuid.delete('-')
+    end
 
-  def convert_to_hls(xyz)
-    puts xyz
-    return unless model.category.video?
+    def convert_to_hls(xyz)
+      puts xyz
+      return unless model.category.video?
 
-    TrainCourse::ConvertToHlsWorker.perform_async(model.id)
-  end
+      TrainCourse::ConvertToHlsWorker.perform_async(model.id)
+    end
 
-  def convert_to_pdf(xyz)
-    puts xyz
-    return unless model.category.document?
-    return if File.extname(file.file).casecmp('.pdf').zero? &&
-              Rails.logger.info('>> uploaded document is already a pdf.')
-    return if Rails.application.secrets.doc_converter_url.blank? &&
-              Rails.logger.debug('>> doc converter url not exists.')
+    def convert_to_pdf(xyz)
+      puts xyz
+      return unless model.category.document?
+      return if File.extname(file.file).casecmp('.pdf').zero? &&
+                Rails.logger.info('>> uploaded document is already a pdf.')
+      return if Rails.application.secrets.doc_converter_url.blank? &&
+                Rails.logger.debug('>> doc converter url not exists.')
 
-    TrainCourse::ConvertToPdfWorker.perform_async(model.id)
-  end
+      TrainCourse::ConvertToPdfWorker.perform_async(model.id)
+    end
 end

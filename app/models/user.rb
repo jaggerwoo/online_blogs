@@ -15,8 +15,9 @@ class User < ApplicationRecord
   end
 
   private
-  def set_password
-    self.salt = Time.now.to_i
-    self.crypted_password = Digest::SHA256.hexdigest(self.password + self.salt)
-  end
+
+    def set_password
+      self.salt = Time.now.to_i
+      self.crypted_password = Digest::SHA256.hexdigest(self.password + self.salt)
+    end
 end
