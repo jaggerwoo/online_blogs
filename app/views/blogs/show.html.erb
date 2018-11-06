@@ -3,7 +3,7 @@
   <div class="row">
     <% @blog_images.each do |blog_image| %>
       <% cache blog_image do %>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-6">
           <a href="#" class="thumbnail detail">
             <%= image_tag blog_image.image.url(:middle) %>
           </a>
