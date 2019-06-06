@@ -131,7 +131,7 @@
 
 #   server {
 #     listen 80;
-#     server_name 140.82.26.63;
+#     server_name 78.141.210.39;
 
 #     error_page 500 502 503 504 /50x.html;
 #     location = /50x.html {
