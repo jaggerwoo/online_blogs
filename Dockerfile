@@ -7,18 +7,15 @@ WORKDIR /home/app
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs 20 --retry 5 --binstubs
 COPY . ./
-# RUN bundle exec rake assets:precompile
-# RUN RAILS_ENV=production bundle exec rake assets:precompile --trace
+RUN bundle exec rake assets:precompile
 # init system
-RUN bin/docker_init.sh
+# RUN bin/docker_init.sh
 # setup shared volumes
-RUN rm -rf tmp log private public/uploads
+# RUN rm -rf tmp log private public/system
 RUN mkdir -p /home/app/tmp/pids
 # need a /data volume
-RUN ln -snf /tmp tmp && \
-    ln -snf /data/log log && \
-    ln -snf /data/uploads public/uploads && \
-    ln -snf /data/private private
+RUN ln -snf /data/log log && \
+    ln -snf /data/public/system public/system
 
 # port
 EXPOSE 3000
