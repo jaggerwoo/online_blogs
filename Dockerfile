@@ -5,7 +5,7 @@ RUN mkdir -p /home/app
 ENV HOME /tmp
 WORKDIR /home/app
 COPY Gemfile Gemfile.lock ./
-RUN bundle install --jobs 20 --retry 5 --binstubs
+RUN gem install bundler && bundle install --jobs 20 --retry 5 --binstubs
 COPY . ./
 RUN bundle exec rake assets:precompile
 # init system
