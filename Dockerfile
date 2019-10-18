@@ -1,6 +1,6 @@
 FROM ruby:2.6.3
 
-RUN apt-get update -qq && apt-get install -y debconf-utils autoconf bison vim build-essential curl git libffi-dev libncurses5-dev libpq-dev libreadline6-dev libssl-dev libyaml-dev imagemagick cron nodejs tzdata nginx yarn --no-install-recommends --fix-missing && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq && apt-get install -y debconf-utils autoconf bison vim build-essential curl git libffi-dev libgdbm3 libncurses5-dev libpq-dev libreadline6-dev libssl-dev libyaml-dev imagemagick cron nodejs tzdata yarn --no-install-recommends --fix-missing && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /home/app
 ENV HOME /tmp
 WORKDIR /home/app
