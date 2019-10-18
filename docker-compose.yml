@@ -24,26 +24,26 @@ services:
     volumes:
       - shared_path:/data
     ports:
-      - 3000:3000
+      - 4100:3000
     env_file:
       - '.env'
 
-  # rails_worker2:
-  #   depends_on:
-  #     - 'setup'
-  #   build: .
-  #   image: 'online_blogs'
-  #   restart: always
-  #   command: rails server --port 3000 --binding 0.0.0.0
-  #   user: root
-  #   stop_grace_period: 1m
-  #   stop_signal: SIGINT
-  #   volumes:
-  #     - shared_path:/data
-  #   ports:
-  #     - 4101:3000
-  #   env_file:
-  #     - '.env'
+  rails_worker2:
+    depends_on:
+      - 'setup'
+    build: .
+    image: 'online_blogs'
+    restart: always
+    command: rails server --port 3000 --binding 0.0.0.0
+    user: root
+    stop_grace_period: 1m
+    stop_signal: SIGINT
+    volumes:
+      - shared_path:/data
+    ports:
+      - 4101:3000
+    env_file:
+      - '.env'
 
   db:
     image: 'postgres:9.6-alpine'
