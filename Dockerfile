@@ -5,6 +5,7 @@ RUN mkdir -p /home/app
 ENV HOME /tmp
 WORKDIR /home/app
 COPY Gemfile Gemfile.lock ./
+ENV BUNDLER_VERSION 1.17.2
 RUN gem install bundler && bundle install --jobs 20 --retry 5 --binstubs
 COPY . ./
 RUN bundle exec rake assets:precompile
