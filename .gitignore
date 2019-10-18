@@ -101,10 +101,6 @@ app/views/styleguide
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
 
-.env.development
-docker-compose.yml
-docker-compose-dev.yml
-docker-compose-prod.yml
 /.tags
 /.tags_sorted_by_file
 
