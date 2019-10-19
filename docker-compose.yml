@@ -3,7 +3,7 @@ version: '2'
 services:
   setup:
     build: .
-    image: 'online_blogs'
+    image: 'jaggerwoo/online_blogs'
     command: rails db:migrate
     user: root
     volumes:
@@ -15,7 +15,7 @@ services:
     depends_on:
       - 'setup'
     build: .
-    image: 'online_blogs'
+    image: 'jaggerwoo/online_blogs'
     restart: always
     command: rails server --port 3000 --binding 0.0.0.0
     user: root
@@ -32,7 +32,7 @@ services:
     depends_on:
       - 'setup'
     build: .
-    image: 'online_blogs'
+    image: 'jaggerwoo/online_blogs'
     restart: always
     command: rails server --port 3000 --binding 0.0.0.0
     user: root
@@ -46,7 +46,7 @@ services:
       - '.env'
 
   db:
-    image: 'postgres:9.6-alpine'
+    image: 'jaggerwoo/postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'root'
       POSTGRES_PASSWORD: 'root'
