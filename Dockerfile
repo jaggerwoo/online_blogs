@@ -12,8 +12,7 @@ RUN bundle exec rake assets:precompile
 # init system
 # RUN bin/docker_init.sh
 # setup shared volumes
-# RUN rm -rf tmp log private public/system
-RUN mkdir -p /home/app/tmp/pids
+RUN rm -rf tmp log private public/system
 # need a /data volume
 RUN ln -snf /data/log log && \
     ln -snf /data/public/system public/system
