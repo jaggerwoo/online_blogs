@@ -1,8 +1,6 @@
 class BlogFile < ApplicationRecord
-  # extend Enumerize
   mount_uploader :attachment_file, AttachmentFileUploader
 
-  # enumerize :category, in: [:video, :document], default: 'video'
   belongs_to :blog
 
   def pdf_path
@@ -20,17 +18,6 @@ class BlogFile < ApplicationRecord
   def serve_path
     
   end
-
-  # NGINX version, serve in public dir
-  # def serve_path
-  #   return pdf_path.sub(self.class.store_dir_root, '') if category.document?
-
-  #   if File.exist? m3u8_path
-  #     m3u8_path.sub(self.class.store_dir_root, '')
-  #   else
-  #     url.sub(self.class.store_dir_root, '')
-  #   end
-  # end
 
   def to_jq_upload
     {

@@ -5,46 +5,36 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.6.3'
+ruby '2.6.4'
 
 gem 'rails', '~> 5.0.1'
-# gem 'mysql2', '~> 0.3.0'
+
 gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+
 gem "bootstrap-sass", ">= 3.4.1"
 gem 'font-awesome-rails'
 gem 'will_paginate'
 gem "paperclip"
 gem 'mini_magick', ">= 4.9.4"
+gem 'carrierwave'
 gem 'redcarpet'
 gem 'pygments.rb'
-gem 'unicorn'
-gem "pundit"
-gem 'carrierwave', '~> 1.0'
-gem 'enumerize'
 
-# Use Capistrano for deployment
+# gem 'unicorn'
 # gem 'capistrano-rails', group: :development
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-end
-
-group :production do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'pg'
-end
 
 group :development do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
